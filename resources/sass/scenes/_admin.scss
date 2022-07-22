@@ -1,0 +1,489 @@
+body {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  &.admin {
+    background-color: $admin-background;
+    color: $gray-600;
+  }
+
+  .admin-topbar {
+    background-color: #181818;
+    border-bottom: 2px solid $gray-400;
+    height: 50px;
+    justify-content: space-between;
+
+    &.top-header {
+      .nav-logo {
+        width: 300px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .right-nav-bar {
+      div {
+        i {
+          color: $gray-600;
+
+          &.fa-bell {
+            font-size: 18px;
+          }
+        }
+      }
+
+      >li {
+        background-color: #a0c3ff;
+        border-radius: 50%;
+        height: 35px;
+        width: 35px;
+
+        >a {
+          color: #4374e0;
+          font-size: 20px;
+          margin-top: 0px;
+          padding: 5px 0px;
+          text-align: center;
+          width: 35px;
+        }
+
+        .dropdown-menu {
+          .dropdown-item {
+            padding: 5px;
+
+            a {
+              color: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .admin-sidebar {
+    border-right: 2px solid $gray-400;
+    float: left;
+    height: calc(100vh - 52px);
+    padding: 5px 0;
+    width: 300px;
+
+    .nav {
+      .navbar {
+        padding: 0;
+        width: 100%;
+
+        .nav-item {
+          border-bottom: 1px solid $gray-400;
+          float: left;
+          padding: 10px;
+          width: 100%;
+
+          .nav-link {
+            color: $admin-table-border;
+
+            &.active {
+              color: #4ed8da;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .admin-dashboard {
+    background-color: $admin-background;
+    height: calc(100vh - 52px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 5px 15px 15px;
+    width: 100%;
+
+    .home-content {
+      height: calc(100vh - 105px);
+      padding: 15px;
+
+      .chart {
+        background-color: $admin-background;
+      }
+
+      .apexcharts-canvas {
+        .apexcharts-legend-series {
+          text-decoration: underline;
+        }
+      }
+
+      .card {
+        .content {
+          background-color: $admin-background;
+          padding: 5px;
+
+          .header, .description {
+            color: #4ed8da;
+          }
+        }
+      }
+
+      .row-0 {
+        margin: 0;
+
+        >div {
+          border: 1px solid $gray-400;
+
+          &:first-child {
+            border-right: none;
+            padding: 0;
+          }
+
+          .line-chart {
+            cursor: pointer;
+          }
+
+          .row {
+            >div {
+              &:first-child {
+                border-right: 1px solid $gray-400;
+              }
+            }
+          }
+        }
+
+        table {
+          background-color: $admin-background;
+  
+          thead {
+            th {
+              background-color: $admin-background;
+              border: 1px solid $admin-table-border !important;
+              color: $admin-color;
+            }
+          }
+
+          tbody {
+            td {
+              border: 1px solid $admin-table-border !important;
+              color: $admin-color;
+
+              a.detail-link {
+                color: $admin-color;
+                cursor: pointer;
+                text-decoration: underline;
+                
+                &:hover {
+                  color: $white;
+                }
+              }
+
+              .success-div {
+                background-color: #c6efce;
+                border: 1px solid $success;
+                margin-top: 4px;
+              }
+
+              .danger-div {
+                background-color: #ffc7ce;
+                border: 1px solid $danger;
+                margin-top: 4px;
+              }
+
+              .warning-div {
+                background-color: #ffffcc;
+                border: 1px solid $warning;
+                margin-top: 4px;
+              }
+
+              &.bar {
+                padding-left: 0px;
+
+                .progress-bar {
+                  height: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    div.segment {
+      color: black;
+      height: 100%;
+    }
+
+    &.compdetail {
+      .content {
+        div.segment {
+          height: initial;
+        }
+      }
+    }
+
+    .table-responsive {
+      /* width */
+      &::-webkit-scrollbar {
+        width: 20px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; 
+        border-radius: 10px;
+      }
+      
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: $white; 
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: grey; 
+      }
+    }
+
+    table {
+      td {
+        a {
+          cursor: pointer;
+        }
+      }
+    }
+
+    >.content {
+      height: calc(100vh - 105px);
+
+      a.detail-link {
+        color: $admin-color;
+        cursor: pointer;
+        text-decoration: underline;
+        
+        &:hover {
+          color: $white;
+        }
+      }
+
+      .select-box {
+        div {
+          background-color: $admin-background;
+          border-color: $admin-table-border !important;
+          color: $admin-color !important;
+
+          .react-select-lg__option--is-focused, .react-select-lg__option--is-selected {
+            color: $black !important;
+          }
+        }
+
+        input {
+          background-color: $admin-background;
+          border-color: $admin-table-border !important;
+          color: $admin-color !important;
+        }
+      }
+
+      table {
+        background-color: $admin-background;
+  
+        thead {
+          th {
+            background-color: $admin-background;
+            border: 1px solid $admin-table-border !important;
+            color: $admin-color !important;
+          }
+        }
+
+        tbody {
+          tr, tr.disabled {
+            td {
+              border: 1px solid $admin-table-border !important;
+              color: $admin-color;
+            }
+          }
+        }
+
+        tfoot {
+          th {
+            background-color: $admin-background;
+            border: 1px solid $admin-table-border !important;
+            color: $admin-color;
+
+            div {
+              background-color: $admin-background;
+              color: $admin-color;
+
+              .ui.pagination.menu {
+                a {
+                  background-color: $admin-background;
+                  border: 1px solid $admin-table-border;
+                  color: $admin-color;
+
+                  &.active {
+                    font-weight: bold;
+                    color: $white;
+                  }
+                }
+              }
+            }
+          } 
+        }
+  
+      }
+
+      .fixed-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: calc(100vh - 500px);
+      }
+
+      .row {
+        div.segment {
+          background-color: $admin-background;
+          border-color: $admin-table-border;
+          color: $admin-color;
+
+          .detail-image {
+            img {
+              background-color: $white;
+            }
+          }
+        }
+
+        .form-group {
+          input {
+            background-color: $admin-background;
+            border-color: $admin-table-border;
+            color: $admin-color;
+          }
+
+          &.calendar {
+            .field {
+              width: 100%;
+
+              input {
+                height: 48px;
+              }
+
+              div.segment {
+                height: initial;
+                
+                .clndr-days {
+                  border-bottom: 1px solid $admin-table-border;
+                  border-right: 1px solid $admin-table-border;
+                }
+
+                span {
+                  background-color: $admin-background;
+                  border-left: 1px solid $admin-table-border;
+                  border-top: 1px solid $admin-table-border;
+
+                  &.clndr-cell-disabled {
+                    color: $white;
+                    opacity: 1;
+                  }
+                }
+
+                .clndr-control {
+                  span {
+                    border: 1px solid $admin-table-border;
+                  }
+                }
+              }
+
+              i {
+                color: $admin-color;
+              }
+            }
+          }
+
+          .club-list {
+            input {
+              height: 48px;
+            }
+          }
+        }
+      }
+
+      .pdf-export {
+        margin: 0 auto;
+        width: 550px;
+  
+        hr {
+          background-color: $black;
+        }
+
+        h5 {
+          color: $black;
+        }
+
+        .k-button.k-primary {
+          background-color:$white;
+          border-color: $white;
+          color: $primary;
+          font-weight: bold;
+        }
+  
+        >div {
+          background-color: $white;
+          border: 1px solid $black;
+          border-radius: 5px;
+          height: 720px;
+          margin-top: 8px;
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+  
+        .k-grid {
+          border: none;
+  
+          tr.k-master-row {
+            background-color: $white;
+          }
+  
+          table {
+            th, td {
+              border-left: none !important;
+              border-right: none !important;
+              border-bottom: 1px solid $black !important;
+              color: $black !important;
+              font-size: $font-size-sm;
+              padding: 0;
+            }
+
+            th {
+              background-color: $white !important;
+            }
+          }
+  
+          .k-grid-header {
+            font-weight: bold;
+            padding: 0 !important;
+  
+            .k-grid-header-wrap {
+              border-bottom: 1px solid $black;
+              border-left: none;
+              border-right: none;
+              border-top: 1px solid $black;
+            }
+          }
+  
+          .k-grid-container {
+            .k-grid-content {
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+}
